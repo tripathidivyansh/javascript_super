@@ -1,0 +1,1 @@
+log(`${key} Shortcut is for ${myObject[key]}`);
