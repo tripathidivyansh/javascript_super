@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html eventS</title>
+</head>
+<body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://imgs.search.brave.com/kkNCgB3BGm9i0JDMLzYu6C38h0TY4a0NSftvv6pXrHE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oZWxw/eC1wcm9kLnNjZW5l/Ny5jb20vaXMvaW1h/Z2UvSGVscHhQcm9k/L2RlZXAtbGluay1j/dGEtcHMtY29tbW9u/PyRwbmckJmpwZWdT/aXplPTIwMCZ3aWQ9/MTAwMA" alt=""></li>
+            <li><img width="200px" id="Japan" src="https://imgs.search.brave.com/qe1vbTP0usINxmR_-qqG_TJOsuHkWKEGSzM9KDgxlJA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by92/aWV3LXRva3lvLWNp/dHlzY2FwZS1uaWdo/dC1qYXBhbl8zMzUy/MjQtNi5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQw" alt=""></li>
+            <li><img width="200px" id="River" src="https://imgs.search.brave.com/qC6kRv_FRaYyQlS0_101Mceiv2-WUw2PNJpc9jJGy48/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9y/aXZlci13aXRoLW5h/dHVyZS1sYW5kc2Nh/cGVfMjMtMjE1MDcw/MTg3Ny5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQw" alt=""></li>
+            <li><img width="200px" id="owl" src="https://imgs.search.brave.com/J_0bhf5yetelsLrRyV-lt8LnHsF6MIV7YJEHCu5Qx24/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9i/cm93bi1vd2wtdHJl/ZS1icmFuY2hfMjA5/NjkwLTI0LmpwZz9z/ZW10PWFpc19oeWJy/aWQmdz03NDA" alt=""></li>
+            <li><img width="200px" id="Prayer" src="https://imgs.search.brave.com/jN5i0eKcd6zMnB2SMQFO36H8NgaV4jz7Cxd_Xj8Ut4Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzUwLzQ2Lzcz/LzM2MF9GXzM1MDQ2/NzM5MV91RkpndGE4/d1J5em5PeFkwVkVk/dWJVeEV5NDhxZU1u/UC5qcGc" alt=""></li>
+
+            <li><a style="color: aliceblue" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script >
+    <!-- document.getElementById('owl').onclick = function(){
+        alert("owl clicked");
+    } -->
+    document.getElementById('owl').addEventListener('click', function(){
+        alert("Owl clicked again")
+    })
+
+    // attachEvent()
+    // J-Query
+
+    // type, timeStamp, defaultPrevented
+    // target, toElement, SrcElement, currentTaregt
+    // clientX, clientY, ScreenX, Screen Y
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    }, false)
+    document.getElementById('owl').addEventListener('click', function(e){
+        //console.log(e);
+        console.log("owl clicked");
+        e.stopPropagation()
+    }, false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        console.log("google clicked");
+    }, false);
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode); 
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+    })
+    // removeIt.parentNode.removeChild(removeIt);
+</script>
+</html>
