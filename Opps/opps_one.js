@@ -35,6 +35,4 @@ const usertwo = new User("chaiaurcode", 11, false);
 
 console.log(userone);
 console.log(usertwo);
- console.log(userone.constructor);
- 
- 
+console.log(userone.constructor);
