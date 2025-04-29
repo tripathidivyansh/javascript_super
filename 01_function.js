@@ -69,3 +69,6 @@ console.log(returnsecondvalue([200, 400, 500, 1000]));
 
 
 // Scope
+
+
+
