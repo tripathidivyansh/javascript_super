@@ -18,3 +18,10 @@ Object.defineProperty(chai, 'name', {
 });
 
 console.log("After modification:", Object.getOwnPropertyDescriptor(chai, "name"));
+
+
+for(const [key, value] of Object.entries){
+    if(typeof value != 'function'){
+        console.log(`${key} : ${value}`);
+    }
+}
